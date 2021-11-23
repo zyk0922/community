@@ -1,0 +1,755 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationStyle":"custom",
+				"enablePullDownRefresh": true
+			} 
+        }
+        ,{
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "登录",
+                "enablePullDownRefresh": false
+            }
+            
+        },{
+            "path" : "pages/login/register",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "注册",
+                "enablePullDownRefresh": false,
+				"titleNView":{
+					"backgroundColor":"#61a0f0",
+					"titleColor":"#fff",
+					"autoBackButton":true,
+					"backButton":{
+						"title":"返回"
+					}
+				}
+            }
+            
+        }
+		,{
+		    "path" : "pages/login/registertwo",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "注册",
+		        "enablePullDownRefresh": false,
+				"titleNView":{
+					"backgroundColor":"#61a0f0",
+					"titleColor":"#fff",
+					"autoBackButton":true,
+					"backButton":{
+						"title":"返回"
+					}
+				}
+		    }
+		    
+		}
+       ,{
+          "path": "pages/news/news",
+          "style": {
+           "navigationBarTitleText": "信息",
+           "navigationBarTextStyle": "black",
+           "navigationBarBackgroundColor": "#FFFFFF",
+           "app-plus": {
+            "titleNView": {
+             "buttons": [{
+              "text": "",
+              "fontSize": "16",
+              "color": "#007AFF",
+              "width": "20",
+              "float":"right"
+             },{
+              "text": "",
+              "fontSize": "16",
+              "color": "#007AFF",
+              "width": "20",
+              "float":"left"
+             }
+             
+             ],
+             "searchInput": {
+              "backgroundColor": "#f4f6f6",
+              "borderRadius": "40px",
+              "align":"left",
+              "placeholder": "输入关键字",
+              "placeholderColor": "#455154"
+             }
+            }
+           }
+          }
+         }
+        ,{
+            "path" : "pages/shop/shop",
+           "style" :
+           {
+               "navigationBarTitleText": "门店",
+               "enablePullDownRefresh": true,
+           	"titleNView":{
+           		"backgroundColor":"#fff",
+           		"titleColor":"#0f0f0f"
+           	}
+           }
+            
+        } ,{
+            "path" : "pages/shop/details",
+           "style" :
+           {
+               "navigationBarTitleText": "门店详情",
+               "enablePullDownRefresh": false,
+           	"titleNView":{
+           		"backgroundColor":"#fff",
+           		"titleColor":"#0f0f0f"
+           	}
+           }
+            
+        }
+        ,{
+            "path" : "pages/my/my",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "会员中心",
+                "enablePullDownRefresh": false,
+				"navigationStyle":"custom"
+				
+            }
+            
+        }
+        ,{
+            "path" : "pages/repair/repair",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "报修",
+                "enablePullDownRefresh": false,
+				"titleNView":{
+					"backgroundColor":"#fff",
+					"titleColor":"#0f0f0f",
+					"autoBackButton":true,
+					"backButton":{
+						"title":"返回"
+					}
+					
+				}
+            }
+            
+        },{
+            "path" : "pages/repair/record",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "报修记录",
+                "enablePullDownRefresh": true,
+				"titleNView":{
+					"backgroundColor":"#fff",
+					"titleColor":"#0f0f0f",
+					"autoBackButton":true,
+					"backButton":{
+						"title":"返回"
+					},
+					"buttons":[
+						{
+							"text":"添加",
+							"fontSize":"16",
+							"width":"auto"
+						}
+					]
+				}
+            }
+            
+        },{
+            "path" : "pages/repair/details",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "报修详情",
+                "enablePullDownRefresh": false,
+				"titleNView":{
+					"backgroundColor":"#fff",
+					"titleColor":"#0f0f0f",
+					"autoBackButton":true,
+					"backButton":{
+						"title":"返回"
+					}
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/pay/pay",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "生活缴费",
+                "enablePullDownRefresh": true,
+				"app-plus":{
+					"titleNView":{
+						"backgroundColor":"#fff",
+						"titleColor":"#0f0f0f",
+						"autoBackButton":true,
+						"backButton":{
+							"title":"返回"
+						},
+						"buttons":[
+							{
+								"text":"缴费记录",
+								"fontSize":"16",
+								"color":"#0080fe",
+								"width":"auto"
+							}
+						]
+					}
+				}
+            }
+        },{
+            "path" : "pages/pay/record",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "缴费记录",
+                "enablePullDownRefresh": true,
+				"app-plus":{
+					"titleNView":{
+						"backgroundColor":"#fff",
+						"titleColor":"#0f0f0f",
+						"autoBackButton":true,
+						"backButton":{
+							"title":"返回"
+						}
+					}
+				}
+            }
+            
+        },{
+            "path" : "pages/pay/Cashier",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "收银台",
+                "enablePullDownRefresh": true,
+				"app-plus":{
+					"titleNView":{
+						"backgroundColor":"#f5f5f5",
+						"titleColor":"#0f0f0f",
+						"autoBackButton":true,
+						"backButton":{
+							"title":"返回"
+						}
+					}
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/house/house",
+           "style" :
+           {
+               "navigationBarTitleText": "房屋认证",
+               "enablePullDownRefresh": false,
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			}
+           		}
+           	}
+           }
+        },{
+            "path" : "pages/house/building",
+           "style" :
+           {
+               "navigationBarTitleText": "选择楼栋",
+               "enablePullDownRefresh": false,
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			}
+           		}
+           	}
+           }
+            
+        },{
+            "path" : "pages/house/houseed",
+           "style" :
+           {
+               "navigationBarTitleText": "选择房间",
+               "enablePullDownRefresh": false,
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			}
+           		}
+           	}
+           }
+            
+        },{
+            "path" : "pages/house/success",
+           "style" :
+           {
+               "navigationBarTitleText": "认证成功",
+               "enablePullDownRefresh": false,
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			}
+           		}
+           	}
+           }
+            
+        },{
+            "path" : "pages/house/examine",
+           "style" :
+           {
+               "navigationBarTitleText": "房屋认证",
+               "enablePullDownRefresh": false,
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			}
+           		}
+           	}
+           }
+            
+        },{
+            "path" : "pages/house/certification",
+           "style" :
+           {
+               "navigationBarTitleText": "我的房屋",
+               "enablePullDownRefresh": false,
+			  "backgroundColor":"#f6f6f6",
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			},
+					"buttons":[
+						{
+							"text":"添加",
+							"fontSize":"16",
+							"width":"auto"
+						}
+					]
+           		}
+           	}
+           }
+            
+        }
+        ,{
+            "path" : "pages/information/information",
+            "style" :
+            {
+                "navigationBarTitleText": "资讯",
+                "enablePullDownRefresh": true,
+            	"app-plus":{
+            		"titleNView":{
+            			"backgroundColor":"#fff",
+            			"titleColor":"#0f0f0f",
+            			"autoBackButton":true,
+            			"backButton":{
+            				"title":"返回"
+            			}
+            		}
+            	}
+            }
+        },{
+            "path" : "pages/information/details",
+            "style" :
+            {
+                "navigationBarTitleText": "资讯详情",
+                "enablePullDownRefresh": false,
+            	"app-plus":{
+            		"titleNView":{
+            			"backgroundColor":"#fff",
+            			"titleColor":"#0f0f0f",
+            			"autoBackButton":true,
+            			"backButton":{
+            				"title":"返回"
+            			}
+            		}
+            	}
+            }
+        }
+        ,{
+            "path" : "pages/vehicle/vehicle",
+            "style" :
+            {
+                "navigationBarTitleText": "我的车辆",
+                "enablePullDownRefresh": false,
+            	"app-plus":{
+            		"titleNView":{
+            			"backgroundColor":"#fff",
+            			"titleColor":"#0f0f0f",
+            			"autoBackButton":true,
+            			"backButton":{
+            				"title":"返回"
+            			},
+						"buttons":[
+							{
+								"text":"添加车辆",
+								"fontSize":"16",
+								"color":"#0080fe",
+								"width":"auto"
+							}
+						]
+            		}
+            	}
+            }
+        },
+		{
+		    "path" : "pages/vehicle/add",
+		    "style" :
+		    {
+		        "navigationBarTitleText": "添加车辆",
+		        "enablePullDownRefresh": false,
+		    	"app-plus":{
+		    		"titleNView":{
+		    			"backgroundColor":"#fff",
+		    			"titleColor":"#0f0f0f",
+		    			"autoBackButton":true,
+		    			"backButton":{
+		    				"title":"返回"
+		    			}
+		    		}
+		    	}
+		    }
+		}
+       ,{
+           "path" : "pages/feedback/feedback",
+           "style" :                                                                                    
+           {
+               "navigationBarTitleText": "问题反馈",
+               "enablePullDownRefresh": false,
+       		"titleNView":{
+       			"backgroundColor":"#fff",
+       			"titleColor":"#0f0f0f",
+       			"autoBackButton":true,
+       			"backButton":{
+       				"title":"返回"
+       			}
+       			
+       		}
+           }
+        },{
+           "path" : "pages/feedback/details",
+           "style" :                                                                                    
+           {
+               "navigationBarTitleText": "反馈详情",
+               "enablePullDownRefresh": false,
+       		"titleNView":{
+       			"backgroundColor":"#fff",
+       			"titleColor":"#0f0f0f",
+       			"autoBackButton":true,
+       			"backButton":{
+       				"title":"返回"
+       			}
+       			
+       		}
+           }
+        },{
+            "path" : "pages/feedback/record",
+           "style" :
+           {
+               "navigationBarTitleText": "反馈记录",
+               "enablePullDownRefresh": true,
+			  "backgroundColor":"#f6f6f6",
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			},
+					"buttons":[
+						{
+							"text":"添加",
+							"fontSize":"16",
+							"width":"auto"
+						}
+					]
+           		}
+           	}
+           }
+            
+        }
+       ,{
+           "path" : "pages/family/family",
+          "style" :
+          {
+              "navigationBarTitleText": "家庭成员",
+              "enablePullDownRefresh": true,
+       	  "backgroundColor":"#f6f6f6",
+          	"app-plus":{
+          		"titleNView":{
+          			"backgroundColor":"#fff",
+          			"titleColor":"#0f0f0f",
+          			"autoBackButton":true,
+          			"backButton":{
+          				"title":"返回"
+          			},
+       			"buttons":[
+       				{
+       					"text":"添加",
+       					"fontSize":"16",
+       					"width":"auto"
+       				}
+       			]
+          		}
+          	}
+          }
+           
+       },{
+           "path" : "pages/family/familyAdd",
+          "style" :
+          {
+              "navigationBarTitleText": "添加成员",
+              "enablePullDownRefresh": true,
+       	  "backgroundColor":"#f6f6f6",
+          	"app-plus":{
+          		"titleNView":{
+          			"backgroundColor":"#fff",
+          			"titleColor":"#0f0f0f",
+          			"autoBackButton":true,
+          			"backButton":{
+          				"title":"返回"
+          			}
+          		}
+          	}
+          }
+           
+       }
+	   ,{
+	        "path" : "pages/my/setup",
+	       "style" :
+	       {
+	           "navigationBarTitleText": "设置",
+	           "enablePullDownRefresh": false,
+	       	"app-plus":{
+	       		"titleNView":{
+	       			"backgroundColor":"#fff",
+	       			"titleColor":"#0f0f0f",
+	       			"autoBackButton":true,
+	       			"backButton":{
+	       				"title":"返回"
+	       			}
+	       		}
+	       	}
+	       }
+	        
+	    },{
+            "path" : "pages/my/uptel",
+           "style" :
+           {
+               "navigationBarTitleText": "修改手机号",
+               "enablePullDownRefresh": false,
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			}
+           		}
+           	}
+           }
+            
+        },{
+            "path" : "pages/my/uptelpass",
+           "style" :
+           {
+               "navigationBarTitleText": "修改手机号",
+               "enablePullDownRefresh": false,
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			}
+           		}
+           	}
+           }
+            
+        },{
+            "path" : "pages/my/uppass",
+           "style" :
+           {
+               "navigationBarTitleText": "修改密码",
+               "enablePullDownRefresh": false,
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			}
+           		}
+           	}
+           }
+            
+        },{
+            "path" : "pages/login/forgetPwd",
+           "style" :
+           {
+               "navigationBarTitleText": "忘记密码",
+               "enablePullDownRefresh": false,
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			}
+           		}
+           	}
+           }
+            
+        },{
+            "path" : "pages/my/upinfo",
+           "style" :
+           {
+               "navigationBarTitleText": "修改个人资料",
+               "enablePullDownRefresh": false,
+           	"app-plus":{
+           		"titleNView":{
+           			"backgroundColor":"#fff",
+           			"titleColor":"#0f0f0f",
+           			"autoBackButton":true,
+           			"backButton":{
+           				"title":"返回"
+           			}
+           		}
+           	}
+           }
+            
+        }
+       
+        ,{
+            "path" : "pages/help/help",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我要帮助",
+                "enablePullDownRefresh": false,
+        		"titleNView":{
+        			"backgroundColor":"#fff",
+        			"titleColor":"#0f0f0f",
+        			"autoBackButton":true,
+        			"backButton":{
+        				"title":"返回"
+        			}
+        		}
+            }
+            
+        },
+		{
+		    "path" : "pages/help/detail",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "聊天详情",
+		        "enablePullDownRefresh": false,
+				"titleNView":{
+					"backgroundColor":"#fff",
+					"titleColor":"#0f0f0f",
+					"autoBackButton":true,
+					"backButton":{
+						"title":"返回"
+					}
+				}
+		    }
+		    
+		},
+		{
+		    "path" : "pages/help/chat",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "聊天",
+		        "enablePullDownRefresh": false,
+				"titleNView":{
+					"backgroundColor":"#fff",
+					"titleColor":"#0f0f0f",
+					"autoBackButton":true,
+					"backButton":{
+						"title":"返回"
+					},
+					"buttons":[
+						{
+							"fontSrc":"../../iconfont/iconfont.ttf",
+							"text":"\ue6cd",
+							"width":"auto",
+							"fontSize":"22"
+						}
+					]
+				}
+		    }
+		    
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#61a0f0",
+		"backgroundColor":"#f9f9f9"
+	},
+	"tabBar": {
+	    "color": "#454545",
+	    "selectedColor": "#0387ff",
+	    "borderStyle": "#f6f6f6",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/images/index-ico.png",
+	        "selectedIconPath": "static/images/indexselected-ico.png",
+	        "text": "首页"
+	    },{
+	        "pagePath": "pages/shop/shop",
+	        "iconPath": "static/images/shop-ico.png",
+	        "selectedIconPath": "static/images/shopselected-ico.png",
+	        "text": "商店"
+	    },{
+	        "pagePath": "pages/news/news",
+	        "iconPath": "static/images/news-ico.png",
+	        "selectedIconPath": "static/images/newsselected-ico.png",
+	        "text": "消息"
+	    },{
+	        "pagePath": "pages/my/my",
+	        "iconPath": "static/images/my-ico.png",
+	        "selectedIconPath": "static/images/myselected-ico.png",
+	        "text": "我的"
+	    }]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}

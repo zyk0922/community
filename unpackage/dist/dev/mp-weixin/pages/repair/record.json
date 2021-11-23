@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "报修记录",
+  "enablePullDownRefresh": false,
+  "titleNView": {
+    "backgroundColor": "#fff",
+    "titleColor": "#0f0f0f",
+    "autoBackButton": true,
+    "backButton": {
+      "title": "返回"
+    }
+  },
+  "usingComponents": {}
+}

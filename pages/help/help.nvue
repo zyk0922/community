@@ -1,0 +1,96 @@
+<template>
+	<view>
+		<text class="title">社区管理员</text>
+		<view class="box">
+			<view class="box-data" @click="chat(item.userid)" v-for="(item,index) in list" :key="index">
+				<view class="left">
+					<image class="headimg" v-if="item.photo" :src="imgUrl+item.photo" mode=""></image>
+					<image class="headimg" v-if="!item.photo" src="../../static/images/head.png" mode=""></image>
+					<view class="name-post">
+						<text class="name">{{item.name}}</text>
+						<text class="post">[{{item.typename}}]</text>
+					</view>
+				</view>
+				<view class="right">
+					<text class="iconfont" style="font-family: iconfont;font-size: 35rpx;">&#xe624;</text>
+				</view>
+			</view>
+			<view class="box-data" @click="chat('m59')">
+				<view class="left">
+					<!-- <image class="headimg" v-if="item.photo" :src="imgUrl+item.photo" mode=""></image> -->
+					<image class="headimg" src="../../static/images/head.png" mode=""></image>
+					<view class="name-post">
+						<text class="name">宗喜景</text>
+						<text class="post">[楼长]</text>
+					</view>
+				</view>
+				<view class="right">
+					<text class="iconfont" style="font-family: iconfont;font-size: 35rpx;">&#xe624;</text>
+				</view>
+			</view>
+			<view class="box-data" @click="chat('m18')">
+				<view class="left">
+					<!-- <image class="headimg" v-if="item.photo" :src="imgUrl+item.photo" mode=""></image> -->
+					<image class="headimg" src="../../static/images/head.png" mode=""></image>
+					<view class="name-post">
+						<text class="name">王志献</text>
+						<text class="post">[楼长]</text>
+					</view>
+				</view>
+				<view class="right">
+					<text class="iconfont" style="font-family: iconfont;font-size: 35rpx;">&#xe624;</text>
+				</view>
+			</view>
+		</view>
+		
+	</view>
+</template>
+
+<script>
+	import config from '../../api/config.js'
+	import http from '../../api/request.js'
+	export default {
+		data() {
+			return {
+				list:[],
+				imgUrl:'',
+			}
+		},
+		onLoad() {
+			this.imgUrl = config.imgUrl
+			this.getlist();
+		},
+		created(){
+		      var domModule = weex.requireModule("dom");
+		          domModule.addRule('fontFace', {
+		                 'fontFamily': 'iconfont',
+		                 'src': "url('/iconfont/iconfont.ttf')"
+		          })
+		  },
+		methods: {
+			getlist(){
+				// 获取楼长信息
+				http.get('/api/user/staff/mylist',{}).then(res=>{
+					this.list  = res.data.list
+				},fail=>{
+					console.log(fail)
+				})
+			},
+			chat(touserid){
+				console.log(touserid)
+				uni.navigateTo({
+					url:'/pages/help/chat?touserid='+touserid
+				})
+			},
+			detail(){
+				uni.navigateTo({
+					url:'/pages/help/detail'
+				})
+			}
+		}
+	}
+</script>
+<style scoped>
+	@import url("./help.css");
+	
+</style>

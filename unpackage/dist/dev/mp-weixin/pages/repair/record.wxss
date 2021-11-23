@@ -1,0 +1,129 @@
+.content.data-v-7a8ddfea {
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #f6f6f6;
+}
+.content .data.data-v-7a8ddfea {
+  width: 96%;
+  background-color: #fff;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.content .data .text.data-v-7a8ddfea {
+  width: 90%;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 60rpx auto 30rpx auto;
+}
+.content .data .imgs.data-v-7a8ddfea {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.content .data .imgs .img.data-v-7a8ddfea {
+  width: 185rpx;
+  height: 150rpx;
+  margin-bottom: 30rpx;
+}
+.content .data .address.data-v-7a8ddfea {
+  width: 90%;
+  height: 75rpx;
+  margin: 0 auto;
+  display: flex;
+  line-height: 75rpx;
+  font-size: 22rpx;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.content .data .address .left.data-v-7a8ddfea {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.content .data .address .right.data-v-7a8ddfea {
+  flex: 1;
+  text-align: end;
+}
+.content .data .state.data-v-7a8ddfea {
+  width: 90%;
+  height: 90rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  font-size: 22rpx;
+}
+.content .data .state .time.data-v-7a8ddfea {
+  flex: 1;
+}
+.content .data .state .state1.data-v-7a8ddfea {
+  width: 130rpx;
+  height: 50rpx;
+  border: 1rpx solid #a8aaad;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.content .data .state .btn.data-v-7a8ddfea {
+  width: 130rpx;
+  height: 50rpx;
+  background-color: #00a2f1;
+  border-radius: 10rpx;
+  line-height: 50rpx;
+  text-align: center;
+  margin-left: 30rpx;
+  color: #fff;
+}
+.tab.data-v-7a8ddfea {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  background-color: #fff;
+}
+/* 隐藏滚动条 */
+.tab.data-v-7a8ddfea ::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}
+.tabLineActive.data-v-7a8ddfea {
+  transition-duration: 0.3s;
+  transition-property: left;
+}
+.childPageView.data-v-7a8ddfea {
+  display: flex;
+  flex-direction: column;
+}
+.tabItem.data-v-7a8ddfea {
+  display: flex;
+}
+.tabItemTitle.data-v-7a8ddfea {
+  width: 100%;
+  color: #333333;
+  font-size: 15px;
+  height: 42px;
+  line-height: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.tabItemTitleActive.data-v-7a8ddfea {
+  color: #0080fe;
+}
+.childPageViewItem.data-v-7a8ddfea {
+  flex: 1;
+  flex-direction: column;
+}
+

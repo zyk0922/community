@@ -1,0 +1,170 @@
+page {
+  display: flex;
+}
+.chat-data .left .data {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-top: 45rpx;
+}
+.chat-data .left .data .headimg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  border: 1rpx solid #fff;
+  margin: 0rpx 15rpx 0 30rpx;
+}
+.chat-data .left .data .text {
+  max-width: 520rpx;
+  min-height: 77rpx;
+  min-width: 77rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  padding: 20rpx 10rpx 20rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 26rpx;
+}
+.chat-data .left .data .iconfont {
+  position: absolute;
+  font-size: 35rpx;
+  color: #ffffff;
+  top: 10;
+  left: 105rpx;
+  transform: rotate(90deg);
+}
+.chat-data .right .data {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-top: 45rpx;
+}
+.chat-data .right .data .headimg {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  border: 1rpx solid #fff;
+  margin: 0rpx 15rpx 0 30rpx;
+}
+.chat-data .right .data .text {
+  max-width: 520rpx;
+  min-height: 77rpx;
+  min-width: 77rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  padding: 20rpx 10rpx 20rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 26rpx;
+}
+.chat-data .right .data .iconfont {
+  position: absolute;
+  font-size: 35rpx;
+  color: #ffffff;
+  top: 10;
+  left: 105rpx;
+  transform: rotate(90deg);
+}
+.chat-data .right .data {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.chat-data .right .data .text {
+  background-color: #60c696;
+  color: #fff;
+}
+.chat-data .right .data .headimg {
+  margin: 0rpx 30rpx 0 15rpx;
+}
+.chat-data .right .data .iconfont2 {
+  color: #60c696;
+  position: absolute;
+  transform: rotate(-90deg);
+  top: 10rpx;
+  right: 105rpx;
+}
+.chat-data .right .data .issees {
+  display: flex;
+  justify-content: flex-end;
+}
+.chat-data .right .data .issees .issee {
+  color: #8d9198;
+  font-size: 22rpx;
+  margin-right: 10rpx;
+  padding-bottom: 10rpx;
+}
+.btn-inp {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.btn-inp .boxtop {
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  background-color: #f3f4f5;
+  border-bottom: 1rpx solid #d0d1d5;
+}
+.btn-inp .iconfont3 {
+  margin: 0 20rpx 45rpx 30rpx;
+}
+.btn-inp .iconfont4 {
+  margin: 0 20rpx 45rpx 20rpx;
+}
+.btn-inp .iconfont5 {
+  margin: 0 20rpx 45rpx 0;
+}
+.btn-inp .inp {
+  flex: 1;
+  min-height: 77rpx;
+  max-height: 185rpx;
+  background-color: #ffffff;
+  padding: 0 20rpx;
+  font-size: 30rpx;
+  padding: 23rpx 10rpx;
+  margin: 20rpx 0 30rpx 0;
+  border-radius: 15rpx;
+}
+.btn-inp .send {
+  width: 100rpx;
+  height: 77rpx;
+  background-color: #60c696;
+  border-radius: 15rpx;
+  margin: 0 20rpx 30rpx 0;
+}
+.btn-inp .send .txt {
+  line-height: 77rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 28rpx;
+}
+.btn-inp .box-bottom {
+  width: 750rpx;
+  height: 500rpx;
+  background-color: #f3f4f5;
+  display: flex;
+  flex-direction: row;
+}
+.btn-inp .box-bottom .photo-box {
+  margin: 40rpx 0 40rpx 60rpx;
+}
+.btn-inp .box-bottom .photo-box .iconfont {
+  width: 105rpx;
+  height: 105rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  color: #474b4e;
+  line-height: 105rpx;
+  text-align: center;
+  font-size: 45rpx;
+}
+.btn-inp .box-bottom .photo-box .txt {
+  width: 105rpx;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  color: #494a4f;
+  text-align: center;
+}

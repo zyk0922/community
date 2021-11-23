@@ -1,0 +1,116 @@
+page.data-v-24dc7ac2 {
+  background-color: #f4f5fa;
+}
+.main.data-v-24dc7ac2 {
+  width: 100%;
+  height: 100%;
+}
+.main .back.data-v-24dc7ac2 {
+  width: 100%;
+  height: 256rpx;
+}
+.main .back image.data-v-24dc7ac2 {
+  width: 100%;
+  height: 100%;
+}
+.main .moban.data-v-24dc7ac2 {
+  width: 92%;
+  height: 310rpx;
+  background-color: #FFFFFF;
+  position: relative;
+  top: -120rpx;
+  margin: auto;
+  border-radius: 15rpx;
+}
+.main .moban .mobanli.data-v-24dc7ac2 {
+  width: 80%;
+  height: 200rpx;
+  margin: auto;
+}
+.main .moban .mobanli .tel.data-v-24dc7ac2 {
+  height: 150rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+}
+.main .moban .mobanli .comm.data-v-24dc7ac2 {
+  width: 100%;
+  height: 100rpx;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+}
+.main .moban .mobanli .comm .code.data-v-24dc7ac2 {
+  width: 50%;
+  height: 100rpx;
+}
+.main .moban .mobanli .comm .comm-but.data-v-24dc7ac2 {
+  display: flex;
+  align-items: center;
+  color: #007AFF;
+}
+.main .moban .mobanli .comm .comm-but.data-v-24dc7ac2::after {
+  border: none;
+}
+.main .zysx.data-v-24dc7ac2 {
+  width: 100%;
+  height: 50rpx;
+  position: absolute;
+  top: 487rpx;
+  display: flex;
+  align-items: center;
+}
+.main .zysx .radio.data-v-24dc7ac2 {
+  margin: 0 10rpx 0 30rpx;
+}
+.main .zysx .radio .radioed.data-v-24dc7ac2 {
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #fff;
+  border-radius: 40rpx;
+  border: 1rpx solid #eeeeee;
+}
+.main .zysx .radio .on.data-v-24dc7ac2 {
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #fff;
+  border-radius: 40rpx;
+  border: 1rpx solid #eeeeee;
+  border: 1rpx solid #458df7;
+  background-color: #458df7;
+  position: relative;
+}
+.main .zysx .radio .on.data-v-24dc7ac2::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -45% 0 0 -30%;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.main .zysx .ra-fo.data-v-24dc7ac2 {
+  font-size: 16rpx;
+  line-height: 50rpx;
+}
+.main .zysx .ra-fo .fo-font.data-v-24dc7ac2 {
+  color: #5da7f0;
+}
+.main .but.data-v-24dc7ac2 {
+  width: 80%;
+  height: 100rpx;
+  margin: auto;
+  border-radius: 50rpx;
+}
+.main .but .bubutton.data-v-24dc7ac2 {
+  width: 100%;
+  height: 100%;
+  background-color: #5da7f0;
+  margin: auto;
+  border-radius: 50rpx;
+  color: #FFFFFF;
+}
+

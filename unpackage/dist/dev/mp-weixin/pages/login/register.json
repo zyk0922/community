@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "注册",
+  "enablePullDownRefresh": false,
+  "titleNView": {
+    "backgroundColor": "#61a0f0",
+    "titleColor": "#fff",
+    "autoBackButton": true,
+    "backButton": {
+      "title": "返回"
+    }
+  },
+  "usingComponents": {}
+}

@@ -1,0 +1,64 @@
+<template>
+	<view>
+		<view class="head">
+			<image class="headimg" src="../../static/logo.png" mode=""></image>
+			<text class="name">设计师大佬</text>
+		</view>
+		<view class="data">
+			<view class="data-data">
+				<text class="left">置顶聊天</text>
+				<view class="right"><switch @change="switch2Change" color="#19BE6B" /></view>
+			</view>
+			<view class="data-data">
+				<text class="left">消息免打扰</text>
+				<view class="right"><switch @change="switch2Change" color="#19BE6B" /></view>
+			</view>
+			<view class="data-data2">
+				<text class="left">屏蔽拉黑</text>
+				<view class="right"><switch @change="blackchange" :checked="isblack" color="#19BE6B" /></view>
+			</view>
+		</view>
+	</view>
+</template>
+<script>
+	import http from '../../api/request.js'
+	export default {
+		data(){
+			return {
+				isblack:false,
+				touserid:'',
+			}
+		},
+		onLoad(option){
+			this.touserid = option.touserid
+			if(option.isblack=='1'){
+				this.isblack=true
+			}else{
+				this.isblack = false
+			}
+		},
+		methods:{
+			blackchange(e) {
+				if(e.detail.value){
+					http.post('/api/user/black/add',{toUserid:this.touserid}).then(res=>{
+						this.isblack = true
+					},fail=>{
+						console.log(fail)
+					})
+				}else{
+					http.get('/api/user/black/delete',{toUserid:this.touserid}).then(res=>{
+						this.isblack = false
+					},fail=>{
+						console.log(fail)
+					})
+				}
+			   console.log('switch2 发生 change 事件，携带值为', e.detail.value)
+				   
+			}
+		}
+	}
+</script>
+
+<style scoped>
+@import url("./detail.css");
+</style>

@@ -1,0 +1,44 @@
+.house-data.data-v-259097fc {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.house-data .house-title.data-v-259097fc {
+  width: 100%;
+  background-color: #f6f6f6;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  padding-left: 30rpx;
+}
+.house-data .house-inp.data-v-259097fc {
+  width: 100%;
+}
+.house-data .house-inp .data.data-v-259097fc {
+  width: 90%;
+  margin: 0 auto;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  line-height: 100rpx;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.house-data .house-inp .data .iconfont.data-v-259097fc {
+  font-size: 24rpx;
+}
+.house-data .house-inp .data-data.data-v-259097fc {
+  width: 90%;
+  margin: 0 auto;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  line-height: 100rpx;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #efefef;
+  border: 0;
+}
+.house-data .house-inp .data-data .iconfont.data-v-259097fc {
+  font-size: 24rpx;
+}
+

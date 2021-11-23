@@ -1,0 +1,74 @@
+.from.data-v-6460d5b4 {
+  width: 90%;
+  margin: 0 auto;
+}
+.from .inp.data-v-6460d5b4 {
+  width: 100%;
+  height: 105rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  position: relative;
+}
+.from .inp.data-v-6460d5b4::after {
+  content: '';
+  width: 100%;
+  height: 1rpx;
+  background-color: #eeeeee;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.from .inp .iconfont.data-v-6460d5b4 {
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+.from .inp .data.data-v-6460d5b4 {
+  color: #898989;
+}
+.from .textarea .textareaa.data-v-6460d5b4 {
+  width: 100%;
+  height: 150rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #c9c9c9;
+}
+.from .camera.data-v-6460d5b4 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40rpx;
+}
+.from .camera .camera-btn.data-v-6460d5b4 {
+  width: 95rpx;
+  height: 95rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #cbcbcb;
+  text-align: center;
+}
+.from .camera .camera-btn .iconfont.data-v-6460d5b4 {
+  font-size: 40rpx;
+  line-height: 95rpx;
+  color: #898989;
+}
+.from .camera .camera-img.data-v-6460d5b4 {
+  width: 95rpx;
+  height: 95rpx;
+  margin-left: 40rpx;
+  border-radius: 15rpx;
+  position: relative;
+}
+.from .camera .camera-img .iconfont.data-v-6460d5b4 {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  z-index: 10;
+  color: #a3a5a8;
+}
+.from .camera .camera-img .img.data-v-6460d5b4 {
+  width: 95rpx;
+  height: 95rpx;
+  border-radius: 15rpx;
+}
+

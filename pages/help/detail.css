@@ -1,0 +1,52 @@
+.head {
+  width: 750rpx;
+  height: 225rpx;
+  display: flex;
+  justify-content: center;
+}
+.head .headimg {
+  width: 95rpx;
+  height: 95rpx;
+  margin-left: 40rpx;
+  border-radius: 15rpx;
+}
+.head .name {
+  width: 95rpx;
+  height: 21rpx;
+  font-size: 21rpx;
+  lines: 1;
+  text-overflow: ellipsis;
+  margin-left: 40rpx;
+}
+.data {
+  width: 750rpx;
+  height: ;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+.data .data-data {
+  width: 700rpx;
+  display: flex;
+  height: 95rpx;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1rpx solid #dedede;
+  justify-content: space-between;
+}
+.data .data-data .left {
+  font-size: 25rpx;
+}
+.data .data-data2 {
+  width: 700rpx;
+  display: flex;
+  height: 95rpx;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1rpx solid #dedede;
+  justify-content: space-between;
+  border: 0;
+}
+.data .data-data2 .left {
+  font-size: 25rpx;
+}

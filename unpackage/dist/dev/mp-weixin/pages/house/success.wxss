@@ -1,0 +1,40 @@
+.success.data-v-3b91966b {
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+}
+.success .box.data-v-3b91966b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200rpx;
+}
+.success .iconfont.data-v-3b91966b {
+  font-size: 145rpx;
+  color: #27da99;
+}
+.success .title.data-v-3b91966b {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-top: 50rpx;
+}
+.success .name.data-v-3b91966b {
+  margin-top: 50rpx;
+}
+.success .houseid.data-v-3b91966b {
+  margin-top: 10rpx;
+}
+.success .txt.data-v-3b91966b {
+  margin-top: 10rpx;
+}
+.success .btn.data-v-3b91966b {
+  width: 90%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #1f8fff;
+  border-radius: 90rpx;
+  margin-top: 100rpx;
+  color: #fff;
+}
+

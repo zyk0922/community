@@ -1,0 +1,325 @@
+<template>
+	<view class="maxbox" @touchstart="close()">
+		<scroll-view scroll-y="true" :style="{height: style.contentViewHeight + 'px','margin-top': marginTop +'px'}">
+			<view class="chat-data" :style="'margin-top:'+margintop+'px;'+'padding-bottom:'+paddingbottom+'rpx'"
+				ref="databox">
+				<view :class="item.userid==userid?'right':'left'" v-for="(item,index) in sendata" :key="index"
+					ref="databottom">
+					<view class="data">
+						<image class="headimg" v-if="item.userid==userid" :src="imgUrl+userinfo.photo" mode=""></image>
+						<image class="headimg" v-if="item.userid!==userid" src="../../static/images/head.png" mode="">
+						</image>
+						<text class="text" v-if="item.type=='text'">{{item.content}}</text>
+						<text :class="item.userid==userid?'iconfont2':'iconfont'" style="font-family: iconfont;"
+							v-if="item.type=='text'">&#xe600;</text>
+						<view class="issees" v-if="item.userid==userid && item.type=='text'">
+							<text class="issee">已读</text>
+						</view>
+						<image v-if="item.type=='file'" @click="previewImages()" style="width: 200rpx; height: 200rpx;"
+							:src="imgUrl+item.content" mode=""></image>
+					</view>
+				</view>
+			</view>
+			<view class="btn-inp" @touchmove.stop>
+				<view class="boxtop">
+					<text class="iconfont3" @click="voice()" v-if="!isvoice"
+						style="font-family: iconfont;font-size: 50rpx;">&#xe805;</text>
+					<text class="iconfont3" @click="voice()" v-if="isvoice"
+						style="font-family: iconfont;font-size: 50rpx;">&#xe652;</text>
+					<textarea class="inp" v-if="!isvoice" :auto-height="true" @blur="textareablur()" type="text"
+						ref="sole" @focus="closebottombox" cursor-spacing="1000" value="" @input="onInput"
+						v-model="content" />
+					<text class="voice" v-if="isvoice" @longpress="startvoice()" @tap="endvoice()"
+						style="flex: 1;height: 77rpx; margin-bottom: 30rpx;margin-top: 20rpx; border-radius: 15rpx; font-size: 28rpx; line-height: 77rpx;text-align: center;background-color: #fff;">按住说话</text>
+					<text class="iconfont4" style="font-family: iconfont;font-size: 50rpx;">&#xe60d;</text>
+					<view class="send" @click="sendout('text')" v-if="isbtn"><text class="txt">发送</text></view>
+					<text class="iconfont5" v-if="!isbtn" @click="isbottoms()"
+						style="font-family: iconfont;font-size: 50rpx;">&#xe726;</text>
+
+				</view>
+				<view class="box-bottom" v-if="isbottom">
+					<view class="photo-box" @touchstart="album('album')">
+						<text class="iconfont" style="font-family: iconfont;">&#xe61e;</text>
+						<text class="txt">相册</text>
+					</view>
+					<view class="photo-box" @touchstart="album('camera')">
+						<text class="iconfont" style="font-family: iconfont;">&#xe60a;</text>
+						<text class="txt">拍摄</text>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+</template>
+
+<script>
+	const dom = uni.requireNativePlugin('dom')
+	import config from '../../api/config.js'
+	import http from '../../api/request.js'
+	const recorderManager = uni.getRecorderManager();
+	const innerAudioContext = uni.createInnerAudioContext();
+
+	innerAudioContext.autoplay = true;
+	export default {
+		data() {
+			return {
+				isvoice: false,
+				imgUrl: '',
+				content: "",
+				isbtn: false,
+				isbottom: false,
+				paddingbottom: 140,
+				userinfo: {},
+				sendata: [],
+				margintop: 0,
+				scrollTop: 0,
+				touserid: '',
+				userid: '',
+				isblack: '',
+				style: {
+					pageHeight: 0,
+					contentViewHeight: 0,
+					footViewHeight: 90,
+					mitemHeight: 0,
+				},
+			}
+		},
+
+		onLoad(option) {
+			let self = this;
+			recorderManager.onStop(function(res) {
+			 console.log('recorder stop' + JSON.stringify(res));
+				self.voicePath = res.tempFilePath;
+			});
+			this.touserid = option.touserid
+			this.userinfo = uni.getStorageSync('userinfo')
+			this.userid = uni.getStorageSync('userid')
+			this.imgUrl = config.imgUrl
+			this.getlist()
+			this.websocket()
+			this.onKeyboardHeightChange()
+
+		},
+		watch: {
+			sendata: function() {
+				this.$nextTick(function() {
+					this.databtm()
+				})
+			}
+		},
+		onShow() {
+			this.getlist()
+			this.$nextTick(() => {
+				this.databtm();
+			})
+		},
+		created() {
+			//获取手机可使用窗口高度
+			const res = uni.getSystemInfoSync(); //api为获取系统信息同步接口
+			this.style.pageHeight = res.windowHeight;
+			this.style.contentViewHeight = res.windowHeight - uni.getSystemInfoSync().screenWidth / 750 * (100) -
+			20; //像素   因为给出的是像素高度 然后我们用的是upx  所以换算一下 
+			this.scrollToBottom(); //创建后调用回到底部方法
+			// 数据底部
+			this.$nextTick(() => {
+				this.databtm();
+			})
+			// 字体图标
+			var domModule = weex.requireModule("dom");
+			domModule.addRule('fontFace', {
+				'fontFamily': 'iconfont',
+				'src': "url('/iconfont/iconfont.ttf')"
+			})
+		},
+		methods: {
+			// 开始录音
+			startvoice() {
+				console.log('开始录音')
+			},
+			// 结束录音
+			endvoice() {
+				console.log('结束录音')
+			},
+			voice(index) {
+				this.isvoice = !this.isvoice
+
+			},
+			// 图片预览
+			previewImages() {
+				let arr = []
+				let res = this.sendata.filter(item => item.type == 'file')
+				res.forEach(item => {
+					arr.push(this.imgUrl + item.content)
+				})
+				uni.previewImage({
+					urls: arr,
+					longPressActions: {
+						itemList: ['发送给朋友', '保存图片', '收藏'],
+						success: function(data) {
+							console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片');
+							if (data.tapIndex == 1) {
+								uni.saveImageToPhotosAlbum({
+									filePath: res.tempFilePaths[0],
+									success: function() {
+										console.log('save success');
+									}
+								});
+							}
+						},
+						fail: function(err) {
+							console.log(err.errMsg);
+						}
+					}
+				});
+			},
+			// 获取聊天记录
+			getlist() {
+				http.get('/api/user/messages/list', {
+					toUserid: this.touserid,
+					page: 1,
+					psize: 100
+				}).then(res => {
+					this.sendata = res.data.list.reverse()
+					this.isblack = res.data.isblack
+				}, fail => {
+					console.log(fail)
+				})
+			},
+			scrollToBottom() {
+				let that = this;
+				let query = uni.createSelectorQuery();
+				query.selectAll('.m-item').boundingClientRect();
+				query.select('#scrollview').boundingClientRect();
+				query.exec((res) => {
+					that.style.mitemHeight = 0;
+					res[0].forEach((rect) => that.style.mitemHeight = that.style.mitemHeight + rect.height +
+						40) //获取所有内部子元素的高度
+					// 因为vue的虚拟DOM 每次生成的新消息都是之前的，所以采用异步setTimeout    主要就是添加了这红字
+					setTimeout(() => {
+						if (that.style.mitemHeight > (that.style.contentViewHeight)) { //判断子元素高度是否大于显示高度
+							that.scrollTop = that.style.mitemHeight - that.style
+								.contentViewHeight //用子元素的高度减去显示的高度就获益获得序言滚动的高度
+						}
+					}, 100)
+				})
+			},
+			websocket() {
+				let _this = this
+				// 创建websocket 连接
+				uni.connectSocket({
+					url: 'ws://39.99.240.103:5000',
+				});
+				// 打开连接
+				uni.onSocketOpen(function(res) {
+					//发送登录请求
+					console.log('WebSocket连接已打开！');
+					_this.sendout('login')
+				});
+				// 连接失败返回
+				uni.onSocketError(function(res) {
+					console.log('WebSocket连接打开失败，请检查！');
+				});
+				// 接收服务器发送内容
+				uni.onSocketMessage(function(res) {
+					let data = JSON.parse(res.data)
+					if (data.type !== 'login') {
+						_this.sendata.push(data)
+					}
+				});
+			},
+			// 发送数据
+			sendout(type) {
+				let data = {
+					"userid": this.userid,
+					"toUserid": this.touserid,
+					"content": this.content,
+					"type": type
+				} //登录请求数据
+				uni.sendSocketMessage({
+					data: JSON.stringify(data)
+				});
+				this.content = ''
+				this.isbtn = false
+			},
+			// 监听键盘事件
+			onKeyboardHeightChange() {
+				uni.onKeyboardHeightChange(res => {
+					this.margintop = res.height
+				})
+			},                       
+			// input框获取焦点事件
+			closebottombox() {
+				this.paddingbottom = 0
+				this.isbottom = false
+				this.databtm()
+			},
+			// 相册,相机
+			album(e) {
+				uni.chooseImage({
+					count: 9, //图片默认9条
+					sourceType: [e],
+					sizeType: ['compressed'], //可以指定是原图还是压缩图，默认二者都有
+					success: (res) => 
+					{
+						console.log(111, res)
+						uni.showLoading({
+							title: "正在上传中"
+						})
+						let tempFilePaths = res.tempFilePaths
+						for (let i = 0; i < tempFilePaths.length; i++) {
+							http.upload('/api/upload/add', tempFilePaths[i], {})
+								.then(res => {
+									uni.hideLoading()
+									this.content = res.data
+									this.sendout('file')
+								}, fail => {
+									uni.hideLoading()
+									console.log(333, fail)
+								})
+						}
+					}
+				});
+			},
+			// 点击加号
+			isbottoms() {
+				this.paddingbottom = 640
+				this.isbottom = true
+				this.$refs.sole.blur()
+				this.databtm()
+			},
+			// 监听input框
+			onInput() {
+				if (this.content && uni.getSystemInfoSync().platform == 'android') {
+					this.isbtn = true
+				} else if (!this.content) {
+					this.isbtn = false
+				}
+			},
+			// 点击空白
+			close() {
+				this.paddingbottom = 0
+				this.$refs.sole.blur()
+				this.isbottom = false
+			},
+			// 回到底部
+			databtm() {
+				console.log(this.sendata.length - 1)
+				let el = this.$refs.databottom[this.sendata.length - 1]
+				dom.scrollToElement(el, {
+					offset: 0
+				})
+			}
+		},
+		onNavigationBarButtonTap(e) {
+			if (e.index == 0) {
+				uni.navigateTo({
+					url: '/pages/help/detail?touserid=' + this.touserid + '&isblack=' + this.isblack
+				})
+			}
+		}
+	}
+</script>
+
+<style scoped>
+	@import url("./chat.css");
+</style>

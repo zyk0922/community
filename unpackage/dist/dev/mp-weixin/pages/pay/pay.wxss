@@ -1,0 +1,117 @@
+.content.data-v-c10d0c50 {
+  background-color: #f6f6f6;
+  height: 93vh;
+}
+.content .top.data-v-c10d0c50 {
+  width: 100%;
+  box-sizing: border-box;
+  height: 100rpx;
+  background-color: #fff;
+  line-height: 100rpx;
+  position: relative;
+}
+.content .top .back.data-v-c10d0c50 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.content .top .back .iconfont.data-v-c10d0c50 {
+  margin: 0 20rpx;
+}
+.content .top .title.data-v-c10d0c50 {
+  width: 100%;
+  text-align: center;
+}
+.content .top .txt.data-v-c10d0c50 {
+  position: absolute;
+  top: 0;
+  right: 20rpx;
+  color: #0080fe;
+}
+.content .address.data-v-c10d0c50 {
+  box-sizing: border-box;
+  width: 100%;
+  height: 105rpx;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 25rpx;
+}
+.content .address .iconfont.data-v-c10d0c50 {
+  margin-left: 20rpx;
+  color: #333333;
+}
+.content .pay-box.data-v-c10d0c50 {
+  width: 93%;
+  height: 327rpx;
+  margin: 0 auto;
+  background: linear-gradient(to right, #006dfe, #00a0fe, #01cafe);
+  border-radius: 20rpx;
+}
+.content .pay-box .price.data-v-c10d0c50 {
+  width: 100%;
+  height: 205rpx;
+  line-height: 205rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #fff;
+}
+.content .pay-box .btn.data-v-c10d0c50 {
+  color: #00a2f1;
+  width: 285rpx;
+  height: 85rpx;
+  border-radius: 85rpx;
+  background-color: #fff;
+  text-align: center;
+  line-height: 85rpx;
+  margin: 0 auto;
+  font-size: 32rpx;
+}
+.content .bill.data-v-c10d0c50 {
+  width: 93%;
+  height: 330rpx;
+  background-color: #fff;
+  margin: 20rpx auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}
+.content .bill .bill-title.data-v-c10d0c50 {
+  width: 100%;
+  margin-top: 10rpx;
+  height: 65rpx;
+  font-size: 24rpx;
+  line-height: 65rpx;
+  position: relative;
+}
+.content .bill .bill-title.data-v-c10d0c50::after {
+  content: '';
+  width: 100%;
+  height: 1rpx;
+  background-color: #eeeeee;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.content .bill .bill-id.data-v-c10d0c50 {
+  font-size: 24rpx;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.content .bill .bill-time.data-v-c10d0c50 {
+  font-size: 24rpx;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.content .bill .bill-price.data-v-c10d0c50 {
+  font-size: 24rpx;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+

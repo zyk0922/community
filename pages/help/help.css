@@ -1,0 +1,49 @@
+.title {
+  width: 750rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 30rpx;
+  color: #666666;
+  font-size: 24rpx;
+}
+.box {
+  width: 750rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.box .box-data {
+  width: 700rpx;
+  height: 205rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #eff1f3;
+  justify-content: space-between;
+}
+.box .box-data .left {
+  display: flex;
+  flex-direction: row;
+}
+.box .box-data .left .headimg {
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 20rpx;
+  border-radius: 90rpx;
+}
+.box .box-data .left .name-post .name {
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  font-weight: 600;
+}
+.box .box-data .left .name-post .post {
+  font-size: 25rpx;
+  color: #666666;
+}
+.box .box-data .right {
+  height: 205rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 100rpx;
+}
