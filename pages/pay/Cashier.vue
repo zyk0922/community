@@ -4,13 +4,13 @@
 		</view>
 		<view class="paymentmode">全部付款方式</view>
 		<view class="payment">
-			<view class="wx"><i class="iconfont icon-weixinzhifu2"></i>
-				<view class="txt">微信支付</view> <label class="radio" @click="radio(1)">
+			<view class="wx" @click="getwxpay()"><i class="iconfont icon-weixinzhifu2"></i>
+				<view class="txt">微信支付</view> <label class="radio" >
 					<view :class="checked?'on':'radioed'"></view>
 				</label>
 			</view>
-			<view class="zfb"><i class="iconfont icon-zhifubaozhifu"></i>
-				<view class="txt">支付宝支付</view> <label class="radio" @click="radio(2)">
+			<view class="zfb" @click="zfbpay()"><i class="iconfont icon-zhifubaozhifu"></i>
+				<view class="txt">支付宝支付</view> <label class="radio" >
 					<view :class="!checked?'on':'radioed'"></view>
 				</label>
 			</view>
@@ -25,21 +25,63 @@
 			return {
 				checked: true,
 				total:0,
+				houseno:'',
+				details:[],
 			}
 		},
 		onLoad(option) {
+			this.houseno = option.houseno
+			this.details = option.details
 			this.total = option.total
 		},
 		components:{
 			iPrice
 		},
 		methods: {
-			radio(e){
-				if(e==1){
+			// 支付宝支付
+			zfbpay(){
+				this.checked = false
+			},
+			// 微信支付
+			getwxpay(){
 					this.checked = true
-				}else{
-					this.checked = false
-				}
+				 let data={
+					"building": this.houseno,
+					    "details":JSON.parse(this.details)
+				};
+				this.$http.post('/api/user/weixin/wxPay',data).then(res=>{
+					uni.requestPayment({
+					    "provider": "wxpay", 
+					    "orderInfo": {
+					        "appid": res.data.appid,  // 微信开放平台 - 应用 - AppId，注意和微信小程序、公众号 AppId 可能不一致
+					        "noncestr": res.data.nonceStr, // 随机字符串
+					        "package": res.data.package,        // 固定值
+					        "partnerid": res.data.mch_id,      // 微信支付商户号
+					        "prepayid": res.data.prepay_id, // 统一下单订单号 
+					        "timestamp": parseInt(res.data.timeStamp),        // 时间戳（单位：秒）
+					        "sign": res.data.paySign // 签名，这里用的 MD5 签名
+					    },
+					    success(res) {
+							uni.showToast({
+								icon:'none',
+								title:'支付成功',
+								duration:2000
+							})
+						},
+					    fail(e) {
+							uni.showToast({
+								icon:'none',
+								title:'支付失败',
+								duration:2000
+							})
+						}
+					})
+				},fail=>{
+					console.log(fail)
+				})
+			},
+			radio(e){
+				
 			}
 		}
 	}

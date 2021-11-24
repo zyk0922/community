@@ -7125,7 +7125,15 @@ var render = function() {
         [
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+            {
+              staticClass: _vm._$g(5, "sc"),
+              attrs: { _i: 5 },
+              on: {
+                click: function($event) {
+                  return _vm.$handleViewEvent($event)
+                }
+              }
+            },
             [
               _c("i", { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } }),
               _c(
@@ -7135,15 +7143,7 @@ var render = function() {
               ),
               _c(
                 "v-uni-label",
-                {
-                  staticClass: _vm._$g(8, "sc"),
-                  attrs: { _i: 8 },
-                  on: {
-                    click: function($event) {
-                      return _vm.$handleViewEvent($event)
-                    }
-                  }
-                },
+                { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
                 [
                   _c("v-uni-view", { class: _vm._$g(9, "c"), attrs: { _i: 9 } })
                 ],
@@ -7154,7 +7154,15 @@ var render = function() {
           ),
           _c(
             "v-uni-view",
-            { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+            {
+              staticClass: _vm._$g(10, "sc"),
+              attrs: { _i: 10 },
+              on: {
+                click: function($event) {
+                  return _vm.$handleViewEvent($event)
+                }
+              }
+            },
             [
               _c("i", { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } }),
               _c(
@@ -7164,15 +7172,7 @@ var render = function() {
               ),
               _c(
                 "v-uni-label",
-                {
-                  staticClass: _vm._$g(13, "sc"),
-                  attrs: { _i: 13 },
-                  on: {
-                    click: function($event) {
-                      return _vm.$handleViewEvent($event)
-                    }
-                  }
-                },
+                { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
                 [
                   _c("v-uni-view", {
                     class: _vm._$g(14, "c"),
@@ -14475,15 +14475,15 @@ if(false) {}
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ./node_modules/css-loader/dist/runtime/api.js */ 13);
 var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/lib/app-plus/getUrl.js */ 350);
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! @/iconfont/iconfont.woff2?t=1637632320167 */ 351);
-var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(/*! @/iconfont/iconfont.woff?t=1637632320167 */ 352);
-var ___CSS_LOADER_URL_IMPORT_2___ = __webpack_require__(/*! @/iconfont/iconfont.ttf?t=1637632320167 */ 353);
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ./iconfont/iconfont.woff2?t=1637738921505 */ 351);
+var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(/*! ./iconfont/iconfont.woff?t=1637738921505 */ 352);
+var ___CSS_LOADER_URL_IMPORT_2___ = __webpack_require__(/*! ./iconfont/iconfont.ttf?t=1637738921505 */ 353);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
 var ___CSS_LOADER_URL_REPLACEMENT_2___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_2___);
 // Module
-exports.push([module.i, "@font-face {\n  font-family: \"iconfont\"; /* Project id 2923750 */\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('woff2'),\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format('woff'),\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format('truetype');\n}\n.iconfont {\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.icon-jianpan:before {\n  content: \"\\e652\";\n}\n.icon-xiangji1:before {\n  content: \"\\e60a\";\n}\n.icon-tupian:before {\n  content: \"\\e61e\";\n}\n.icon-yuyin:before {\n  content: \"\\e805\";\n}\n.icon-jiahao:before {\n  content: \"\\e726\";\n}\n.icon-xiaolian:before {\n  content: \"\\e60d\";\n}\n.icon-sandian:before {\n  content: \"\\e6cd\";\n}\n.icon-dianhua1:before {\n  content: \"\\e624\";\n}\n.icon-touxiang:before {\n  content: \"\\e655\";\n}\n.icon-mingpian:before {\n  content: \"\\e608\";\n}\n.icon-tongxingbie:before {\n  content: \"\\e619\";\n}\n.icon-biyan:before {\n  content: \"\\e613\";\n}\n.icon-yanjing:before {\n  content: \"\\e8c7\";\n}\n.icon-jiesuo:before {\n  content: \"\\e669\";\n}\n.icon-shouji:before {\n  content: \"\\e692\";\n}\n.icon-yunongtongqingchuhuancun:before {\n  content: \"\\e637\";\n}\n.icon-banben:before {\n  content: \"\\e638\";\n}\n.icon-weixinzhifu2:before {\n  content: \"\\e62b\";\n}\n.icon-zhifubaozhifu:before {\n  content: \"\\e616\";\n}\n.icon-yijianfankui:before {\n  content: \"\\e685\";\n}\n.icon-shezhi1:before {\n  content: \"\\e63d\";\n}\n.icon-tubiao_baoxiujilu:before {\n  content: \"\\e623\";\n}\n.icon-xinxi:before {\n  content: \"\\e7ae\";\n}\n.icon-qiche:before {\n  content: \"\\e622\";\n}\n.icon-renzheng:before {\n  content: \"\\e63f\";\n}\n.icon-shezhi:before {\n  content: \"\\e654\";\n}\n.icon-visit-time:before {\n  content: \"\\e60c\";\n}\n.icon-guolv:before {\n  content: \"\\e634\";\n}\n.icon-shijian:before {\n  content: \"\\e609\";\n}\n.icon-dianhua:before {\n  content: \"\\e62a\";\n}\n.icon-weizhi:before {\n  content: \"\\e607\";\n}\n.icon-pengyouquan:before {\n  content: \"\\e621\";\n}\n.icon-dianzan:before {\n  content: \"\\e668\";\n}\n.icon-fenxiang:before {\n  content: \"\\e6aa\";\n}\n.icon-duigouxiao:before {\n  content: \"\\e8bd\";\n}\n.icon-xiajiantou:before {\n  content: \"\\e600\";\n}\n.icon-chahao:before {\n  content: \"\\e729\";\n}\n.icon-xiangji:before {\n  content: \"\\e8bc\";\n}\n.icon-xiangzuojiantou-copy:before {\n  content: \"\\e676\";\n}\n.icon-xiangyoujiantou:before {\n  content: \"\\e65f\";\n}\n.icon-dingwei:before {\n  content: \"\\e675\";\n}\n.icon-sousuo:before {\n  content: \"\\e606\";\n}\n.icon-xiangxiajiantou-copy-copy:before {\n  content: \"\\e677\";\n}\nbody{\n\tbackground-color: #f6f6f6;\n}\nuni-checkbox .uni-checkbox-input {\n\t\tborder-radius: 50% !important;\n\t\tcolor: #ffffff !important;\n}\nuni-checkbox .uni-checkbox-input.uni-checkbox-input-checked {\n\t\tcolor: #fff;\n\t\tbackground: #2B85E4\n}\n\n/*每个页面公共css */\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: \"iconfont\"; /* Project id 2923750 */\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") format('woff2'),\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format('woff'),\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format('truetype');\n}\n.iconfont {\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.icon-yuyin1:before {\n  content: \"\\e6f5\";\n}\n.icon-APPicon_bofangyuyin:before {\n  content: \"\\e697\";\n}\n.icon-jianpan:before {\n  content: \"\\e652\";\n}\n.icon-xiangji1:before {\n  content: \"\\e60a\";\n}\n.icon-tupian:before {\n  content: \"\\e61e\";\n}\n.icon-yuyin:before {\n  content: \"\\e805\";\n}\n.icon-jiahao:before {\n  content: \"\\e726\";\n}\n.icon-xiaolian:before {\n  content: \"\\e60d\";\n}\n.icon-sandian:before {\n  content: \"\\e6cd\";\n}\n.icon-dianhua1:before {\n  content: \"\\e624\";\n}\n.icon-touxiang:before {\n  content: \"\\e655\";\n}\n.icon-mingpian:before {\n  content: \"\\e608\";\n}\n.icon-tongxingbie:before {\n  content: \"\\e619\";\n}\n.icon-biyan:before {\n  content: \"\\e613\";\n}\n.icon-yanjing:before {\n  content: \"\\e8c7\";\n}\n.icon-jiesuo:before {\n  content: \"\\e669\";\n}\n.icon-shouji:before {\n  content: \"\\e692\";\n}\n.icon-yunongtongqingchuhuancun:before {\n  content: \"\\e637\";\n}\n.icon-banben:before {\n  content: \"\\e638\";\n}\n.icon-weixinzhifu2:before {\n  content: \"\\e62b\";\n}\n.icon-zhifubaozhifu:before {\n  content: \"\\e616\";\n}\n.icon-yijianfankui:before {\n  content: \"\\e685\";\n}\n.icon-shezhi1:before {\n  content: \"\\e63d\";\n}\n.icon-tubiao_baoxiujilu:before {\n  content: \"\\e623\";\n}\n.icon-xinxi:before {\n  content: \"\\e7ae\";\n}\n.icon-qiche:before {\n  content: \"\\e622\";\n}\n.icon-renzheng:before {\n  content: \"\\e63f\";\n}\n.icon-shezhi:before {\n  content: \"\\e654\";\n}\n.icon-visit-time:before {\n  content: \"\\e60c\";\n}\n.icon-guolv:before {\n  content: \"\\e634\";\n}\n.icon-shijian:before {\n  content: \"\\e609\";\n}\n.icon-dianhua:before {\n  content: \"\\e62a\";\n}\n.icon-weizhi:before {\n  content: \"\\e607\";\n}\n.icon-pengyouquan:before {\n  content: \"\\e621\";\n}\n.icon-dianzan:before {\n  content: \"\\e668\";\n}\n.icon-fenxiang:before {\n  content: \"\\e6aa\";\n}\n.icon-duigouxiao:before {\n  content: \"\\e8bd\";\n}\n.icon-xiajiantou:before {\n  content: \"\\e600\";\n}\n.icon-chahao:before {\n  content: \"\\e729\";\n}\n.icon-xiangji:before {\n  content: \"\\e8bc\";\n}\n.icon-xiangzuojiantou-copy:before {\n  content: \"\\e676\";\n}\n.icon-xiangyoujiantou:before {\n  content: \"\\e65f\";\n}\n.icon-dingwei:before {\n  content: \"\\e675\";\n}\n.icon-sousuo:before {\n  content: \"\\e606\";\n}\n.icon-xiangxiajiantou-copy-copy:before {\n  content: \"\\e677\";\n}\nbody{\n\tbackground-color: #f6f6f6;\n}\nuni-checkbox .uni-checkbox-input {\n\t\tborder-radius: 50% !important;\n\t\tcolor: #ffffff !important;\n}\nuni-checkbox .uni-checkbox-input.uni-checkbox-input-checked {\n\t\tcolor: #fff;\n\t\tbackground: #2B85E4\n}\n\n/*每个页面公共css */\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -14535,7 +14535,7 @@ module.exports = function (url, options) {
 /***/ }),
 /* 351 */
 /*!********************************************************************!*\
-  !*** E:/wwwroot/community/iconfont/iconfont.woff2?t=1637632320167 ***!
+  !*** E:/wwwroot/community/iconfont/iconfont.woff2?t=1637738921505 ***!
   \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -14545,7 +14545,7 @@ module.exports = "/iconfont/iconfont.woff2";
 /***/ }),
 /* 352 */
 /*!*******************************************************************!*\
-  !*** E:/wwwroot/community/iconfont/iconfont.woff?t=1637632320167 ***!
+  !*** E:/wwwroot/community/iconfont/iconfont.woff?t=1637738921505 ***!
   \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -14555,7 +14555,7 @@ module.exports = "/iconfont/iconfont.woff";
 /***/ }),
 /* 353 */
 /*!******************************************************************!*\
-  !*** E:/wwwroot/community/iconfont/iconfont.ttf?t=1637632320167 ***!
+  !*** E:/wwwroot/community/iconfont/iconfont.ttf?t=1637738921505 ***!
   \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {

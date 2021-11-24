@@ -6,7 +6,7 @@
 			</view>
 		</picker>
 		<view class="pay-box">
-			<view class="price">应缴费：{{total}}元</view>
+			<view class="price">应缴费：{{total.toFixed(2)}}元</view>
 			<view class="btn" @click="pay()">缴费</view>
 		</view>
 		<view class="bill" v-for="(item,index) in list">
@@ -30,10 +30,13 @@
 				list:[],
 				total:0,
 				page:1,
-				psize:10,
+				psize:1000,
 				array:[],                                                                                
 				index:'',
-				loading:false
+				houseid:'',
+				loading:false,
+				houseno:'',
+				details:[],
 			}
 		},
 		onLoad(){
@@ -47,32 +50,42 @@
 			loading
 		},
 		methods: {
+			// 跳转缴费页面
 			pay(){
+				// this.getwxpay();
 				uni.navigateTo({
-					url:'/pages/pay/Cashier?total='+this.total
+					url:'/pages/pay/Cashier?total='+this.total.toFixed(2)+'&houseno='+this.houseno+'&details='+JSON.stringify(this.details)
 				})
 			},
 			// 地址
 			bindPickerChange(e){
 				let id = this.array[e.detail.value].houseid;
-				console.log(id)
+				let houseno = this.array[e.detail.value].houseno;
+				this.houseid = id
+				this.houseno = houseno
 				this.getlist(id)
 			},
+			// 获取房间
 			getarray(){
 				this.arraylist.forEach(item=>{
-					this.array.push({building:item.building+item.houseno,houseid:item.houseid})
-					this.index = this.array[0].building
+					this.array.push({building:item.building+item.houseno,houseid:item.houseid,houseno:item.houseno})
 				})
+				this.index = this.array[0].building
+				this.houseid = this.array[0].houseid
+				this.houseno = this.array[0].houseno
 			},
-			getlist(id){
+			// 获取缴费数据
+			getlist(houseid){
 				if(!this.isshow){
 					this.loading = true
 				}
-				this.$http.get('/api/user/fee/list',{state:1,page:this.page,psize:this.psize,houseid:id}).then(res=>{
+				this.$http.get('/api/user/fee/list',{houseid:houseid,state:1,page:this.page,psize:this.psize}).then(res=>{
+					console.log(res)
 					let arr = this.list.concat(res.data.list)
 					this.list= arr
 					res.data.list.forEach((item)=>{
 						this.total+=item.price
+						this.details.push({"feeid":item.id})
 					})
 					this.loading = false
 					uni.stopPullDownRefresh()

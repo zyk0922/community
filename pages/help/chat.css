@@ -1,6 +1,11 @@
 page {
   display: flex;
 }
+.maxbox .box-box {
+  position: fixed;
+  top: 300%;
+  left: 0;
+}
 .chat-data .left .data {
   position: relative;
   display: flex;
@@ -108,16 +113,16 @@ page {
   background-color: #f3f4f5;
   border-bottom: 1rpx solid #d0d1d5;
 }
-.btn-inp .iconfont3 {
+.btn-inp .boxtop .iconfont3 {
   margin: 0 20rpx 45rpx 30rpx;
 }
-.btn-inp .iconfont4 {
+.btn-inp .boxtop .iconfont4 {
   margin: 0 20rpx 45rpx 20rpx;
 }
-.btn-inp .iconfont5 {
+.btn-inp .boxtop .iconfont5 {
   margin: 0 20rpx 45rpx 0;
 }
-.btn-inp .inp {
+.btn-inp .boxtop .inp {
   flex: 1;
   min-height: 77rpx;
   max-height: 185rpx;
@@ -128,30 +133,30 @@ page {
   margin: 20rpx 0 30rpx 0;
   border-radius: 15rpx;
 }
-.btn-inp .send {
+.btn-inp .boxtop .send {
   width: 100rpx;
   height: 77rpx;
   background-color: #60c696;
   border-radius: 15rpx;
   margin: 0 20rpx 30rpx 0;
 }
-.btn-inp .send .txt {
+.btn-inp .boxtop .send .txt {
   line-height: 77rpx;
   color: #fff;
   text-align: center;
   font-size: 28rpx;
 }
-.btn-inp .box-bottom {
+.btn-inp .boxtop .box-bottom {
   width: 750rpx;
   height: 500rpx;
   background-color: #f3f4f5;
   display: flex;
   flex-direction: row;
 }
-.btn-inp .box-bottom .photo-box {
+.btn-inp .boxtop .box-bottom .photo-box {
   margin: 40rpx 0 40rpx 60rpx;
 }
-.btn-inp .box-bottom .photo-box .iconfont {
+.btn-inp .boxtop .box-bottom .photo-box .iconfont {
   width: 105rpx;
   height: 105rpx;
   background-color: #fff;
@@ -161,7 +166,7 @@ page {
   text-align: center;
   font-size: 45rpx;
 }
-.btn-inp .box-bottom .photo-box .txt {
+.btn-inp .boxtop .box-bottom .photo-box .txt {
   width: 105rpx;
   font-size: 26rpx;
   margin-top: 10rpx;
