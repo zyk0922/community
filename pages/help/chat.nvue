@@ -179,7 +179,7 @@
 				setTimeout(()=>{
 					innerAudioContext.stop()
 				},time)
-				
+	
 			},
 			// 开始录音
 			 startRecord() {
