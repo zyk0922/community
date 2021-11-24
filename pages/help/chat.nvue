@@ -7,13 +7,15 @@
 					ref="databottom">
 					<view class="data">
 						<image class="headimg" v-if="item.userid==userid" :src="imgUrl+userinfo.photo" mode=""></image>
-						<image class="headimg" v-if="item.userid!==userid" src="../../static/images/head.png" mode="">
+						<image class="headimg" v-if="item.userid!==userid && !touserphoto" :src="imgUrl+touserphoto" mode="">
+						<image class="headimg" v-if="item.userid!==userid && touserphoto" src="../../static/images/head.png" mode="">
 						</image>
 						<text class="text" v-if="item.type=='text'">{{item.content}}</text>
 						<text :class="item.userid==userid?'iconfont2':'iconfont'" style="font-family: iconfont;"
 							v-if="item.type=='text'">&#xe600;</text>
-							<text v-if="item.type=='mp3'" class="text" @click="playVoice(item.content)" style="font-family: iconfont;">" 9 &#xe6f5;</text>
-						<view class="issees" v-if="item.userid==userid && item.type=='text' || item.type=='mp3'">
+							<text v-if="item.userid==userid && item.type=='mp3'" class="text" @click="playVoice(item.content)" style="font-family: iconfont; min-width:150rpx; text-align: center;">" 9 &#xe6f5;</text>
+							<text v-if="item.userid!==userid && item.type=='mp3'" class="text" @click="playVoice(item.content)" style="font-family: iconfont;min-width:150rpx; text-align: center;"> &#xe8c8; 9 "</text>
+						<view class="issees" v-if="item.userid==userid && item.type=='text' || item.type=='mp3' && item.userid==userid">
 							<text class="issee">已读</text>
 						</view>
 						
@@ -33,8 +35,7 @@
 						v-model="content" />
 						
 						<!-- 录音 -->
-					<text class="voice" v-if="isvoice" @touchstart="startRecord" @touchend="endRecord" @tap="endvoice()"
-						style="flex: 1;height: 77rpx; margin-bottom: 30rpx;margin-top: 20rpx; border-radius: 15rpx; font-size: 28rpx; line-height: 77rpx;text-align: center;background-color: #fff;">按住说话</text>
+					<text class="voice" v-if="isvoice" @touchstart="startRecord" @touchend="endRecord" @tap="endvoice()">按住说话</text>
 						<!-- 录音结束 -->
 					<text class="iconfont4" style="font-family: iconfont;font-size: 50rpx;">&#xe60d;</text>
 					<view class="send" @click="sendout('text')" v-if="isbtn"><text class="txt">发送</text></view>
@@ -97,6 +98,7 @@
 				touserid: '',
 				userid: '',
 				isblack: '',
+				touserphoto:'',
 				style: {
 					pageHeight: 0,
 					contentViewHeight: 0,
@@ -108,6 +110,7 @@
 
 		onLoad(option) {
 			let self = this;
+			this.touserphoto = option.photo
 			// 录音结束
 			recorderManager.onStop(function(res) {
 			 console.log('recorder stop' + JSON.stringify(res));

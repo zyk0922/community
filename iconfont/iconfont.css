@@ -1,20 +1,24 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2923750 */
-  src: url('./iconfont/iconfont.woff2?t=1637738921505') format('woff2'),
-       url('./iconfont/iconfont.woff?t=1637738921505') format('woff'),
-       url('./iconfont/iconfont.ttf?t=1637738921505') format('truetype');
+  src: url('./iconfont/iconfont.woff2?t=1637756038906') format('woff2'),
+       url('./iconfont/iconfont.woff?t=1637756038906') format('woff'),
+       url('./iconfont/iconfont.ttf?t=1637756038906') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 16px;
   font-style: normal;
+  font-size: 32rpx;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-yuyin1:before {
   content: "\e6f5";
+}
+
+.icon-yuyin1-copy:before {
+  content: "\e8c8";
 }
 
 .icon-APPicon_bofangyuyin:before {

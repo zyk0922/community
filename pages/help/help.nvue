@@ -2,7 +2,7 @@
 	<view>
 		<text class="title">社区管理员</text>
 		<view class="box">
-			<view class="box-data" @click="chat(item.userid)" v-for="(item,index) in list" :key="index">
+			<view class="box-data" @click="chat(item.userid,item.photo)" v-for="(item,index) in list" :key="index">
 				<view class="left">
 					<image class="headimg" v-if="item.photo" :src="imgUrl+item.photo" mode=""></image>
 					<image class="headimg" v-if="!item.photo" src="../../static/images/head.png" mode=""></image>
@@ -76,10 +76,10 @@
 					console.log(fail)
 				})
 			},
-			chat(touserid){
+			chat(touserid,photo){
 				console.log(touserid)
 				uni.navigateTo({
-					url:'/pages/help/chat?touserid='+touserid
+					url:'/pages/help/chat?touserid='+touserid+'&photo='+photo
 				})
 			},
 			detail(){
