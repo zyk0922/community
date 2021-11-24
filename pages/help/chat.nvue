@@ -175,9 +175,9 @@
 			    console.log('播放录音');
 			    innerAudioContext.src = this.imgUrl+path;
 			    innerAudioContext.play();
-				let time = InnerAudioContext.duration
+				let time = innerAudioContext.duration
 				setTimeout(()=>{
-					InnerAudioContext.stop()
+					innerAudioContext.stop()
 				},time)
 				
 			},
